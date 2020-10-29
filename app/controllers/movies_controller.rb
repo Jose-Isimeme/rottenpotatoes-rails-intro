@@ -18,6 +18,7 @@ class MoviesController < ApplicationController
     when 'release_date'
       ordering, @date_header = {:release_date => :asc}, 'hilite'
     end
+    
     #@movies = Movie.order(ordering)
     #@all_ratings = Movie.order(:rating).select(:rating).map(&:rating).uniq
     #@checked_ratings = check
@@ -31,8 +32,7 @@ class MoviesController < ApplicationController
       #@movies = Movie.where(:rating => @checked_ratings)
     #end
     
-    #part2 
-
+    #part2 attempt 2
     @all_ratings = Movie.all_ratings
     @selected_ratings = params[:ratings] || session[:ratings] || {}
 
@@ -86,4 +86,4 @@ class MoviesController < ApplicationController
   end
   
 end
-#ggg
+
